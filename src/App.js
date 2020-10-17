@@ -41,22 +41,6 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ backgroundColor: "violet", display: "inline-block" }}>
-        <p>Box One</p>
-        <ul>
-          <li>item</li>
-          <li>item</li>
-          <li>item</li>
-        </ul>
-      </div>
-      <div style={{ backgroundColor: "lightblue", display: "inline-block" }}>
-        <p>Box One</p>
-        <ul>
-          <li>item</li>
-          <li>item</li>
-          <li>item</li>
-        </ul>
-      </div>
       <header className="App-header">
         <h3>The current count is: {count}</h3>
 
@@ -96,7 +80,11 @@ function App() {
           <input type="submit" value="Submit" />
         </form>
 
-        <h3>Hello {firstName}! How are you today?</h3>
+        {firstName ? (
+          <h3>Hello {firstName}! How are you today?</h3>
+        ) : (
+          <h3>Nobody has filled out the form yet!</h3>
+        )}
 
         <img src={logo} className="App-logo" alt="logo" />
         <p>
