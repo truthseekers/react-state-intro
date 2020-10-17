@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
+function SayHi(props) {
+  if (props.firstName) {
+    return <h3>Hello {props.firstName}! How are you today?</h3>;
+  } else {
+    return <h3>Nobody has filled out the form!</h3>;
+  }
+}
+
 function App() {
   const [count, setCount] = useState(0);
   const [textField, setTextField] = useState("");
@@ -80,11 +88,7 @@ function App() {
           <input type="submit" value="Submit" />
         </form>
 
-        {firstName ? (
-          <h3>Hello {firstName}! How are you today?</h3>
-        ) : (
-          <h3>Nobody has filled out the form yet!</h3>
-        )}
+        <SayHi firstName={firstName} />
 
         <img src={logo} className="App-logo" alt="logo" />
         <p>
