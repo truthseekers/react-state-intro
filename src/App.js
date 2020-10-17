@@ -6,6 +6,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [textField, setTextField] = useState("");
   const [firstName, setFirstName] = useState("");
+  const [operator, setOperator] = useState("subtract");
 
   const increaseCount = () => {
     setCount(count + 1);
@@ -32,7 +33,7 @@ function App() {
 
         <form>
           <label>Choose an operator</label>
-          <select value="">
+          <select value={operator}>
             <option value="add">+</option>
             <option value="multiply">*</option>
             <option value="subtract">-</option>
