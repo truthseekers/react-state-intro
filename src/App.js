@@ -33,7 +33,12 @@ function App() {
 
         <form>
           <label>Choose an operator</label>
-          <select value={operator}>
+          <select
+            value={operator}
+            onChange={(event) => {
+              setOperator(event.target.value);
+            }}
+          >
             <option value="add">+</option>
             <option value="multiply">*</option>
             <option value="subtract">-</option>
