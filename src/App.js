@@ -41,6 +41,22 @@ function App() {
 
   return (
     <div className="App">
+      <div style={{ backgroundColor: "violet", display: "inline-block" }}>
+        <p>Box One</p>
+        <ul>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </div>
+      <div style={{ backgroundColor: "lightblue", display: "inline-block" }}>
+        <p>Box One</p>
+        <ul>
+          <li>item</li>
+          <li>item</li>
+          <li>item</li>
+        </ul>
+      </div>
       <header className="App-header">
         <h3>The current count is: {count}</h3>
 
