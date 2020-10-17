@@ -9,11 +9,16 @@ function App() {
     setCount(count + 1);
   };
 
+  const decreaseCount = () => {
+    setCount(count - 1);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
         <h3>The current count is: {count}</h3>
         <button onClick={increaseCount}>count + 1</button>
+        <button onClick={decreaseCount}>count - 1</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
