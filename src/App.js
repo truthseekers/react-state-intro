@@ -29,8 +29,18 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h3>The current count is: {count}</h3>
-        <button onClick={increaseCount}>count + 1</button>
-        <button onClick={decreaseCount}>count - 1</button>
+
+        <form>
+          <label>Choose an operator</label>
+          <select value="">
+            <option value="add">+</option>
+            <option value="multiply">*</option>
+            <option value="subtract">-</option>
+            <option value="divide">/</option>
+          </select>
+          <input type="number" value="" />
+          <input type="submit" value="Submit" />
+        </form>
 
         <form onSubmit={handleSubmit}>
           <label>
