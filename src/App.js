@@ -7,13 +7,26 @@ function App() {
   const [textField, setTextField] = useState("");
   const [firstName, setFirstName] = useState("");
   const [operator, setOperator] = useState("subtract");
+  const [countInput, setCountInput] = useState(0);
 
-  const increaseCount = () => {
-    setCount(count + 1);
-  };
-
-  const decreaseCount = () => {
-    setCount(count - 1);
+  const updateCount = (event) => {
+    event.preventDefault();
+    switch (operator) {
+      case "add":
+        setCount(count + countInput);
+        break;
+      case "subtract":
+        setCount(count - countInput);
+        break;
+      case "divide":
+        setCount(count / countInput);
+        break;
+      case "multiply":
+        setCount(count * countInput);
+        break;
+      default:
+        setCount(count + countInput);
+    }
   };
 
   const handleNameFieldChange = (event) => {
@@ -31,7 +44,7 @@ function App() {
       <header className="App-header">
         <h3>The current count is: {count}</h3>
 
-        <form>
+        <form onSubmit={updateCount}>
           <label>Choose an operator</label>
           <select
             value={operator}
@@ -44,7 +57,13 @@ function App() {
             <option value="subtract">-</option>
             <option value="divide">/</option>
           </select>
-          <input type="number" value="" />
+          <input
+            type="number"
+            value={countInput}
+            onChange={(event) => {
+              setCountInput(parseInt(event.target.value));
+            }}
+          />
           <input type="submit" value="Submit" />
         </form>
 
